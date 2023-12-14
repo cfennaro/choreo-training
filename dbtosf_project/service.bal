@@ -16,14 +16,14 @@ service / on new http:Listener(9090) {
     }
 
     # A resource for transforming a contact record in salesforce
-# + salesforceContact - the input contacts
-# + return - transformed contacts or error
-resource function post contact(@http:Payload SalesforceContact
-salesforceContact) returns Contact|error? {
-Contact contact = transform(salesforceContact);
-return contacts;
-}
-}
+    # + salesforceContact - the input contacts
+    # + return - transformed contacts or error
+    resource function post contact(@http:Payload SalesforceContact
+        salesforceContact) returns Contact|error? {
+            Contact contact = transform(salesforceContact);
+            return contacts;
+        }
+    }
 
 type SalesforceContact record {
     record {
